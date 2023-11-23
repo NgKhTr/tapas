@@ -58,6 +58,7 @@ def create_random_example(
   if task_type is table_dataset.TableTask.RETRIEVAL_NEGATIVES:
     # For this task every table feature encodes 2 tables.
     max_seq_length = 2 * max_seq_length
+  print("We here!!!")
   values = dict(
       input_ids=np.random.randint(
           vocab_size, size=[max_seq_length], dtype=np.int32),
