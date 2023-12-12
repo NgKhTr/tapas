@@ -82,7 +82,7 @@ def _calc_denotation_accuracy(tables_file, examples, denotation_errors_path,
       add_weights=False)['denotation_accuracy']
 
 
-def _calc_weighted_denotation_accuracy(tables_file, examples,
+def _calc_weighted_uracy(tables_file, examples,
                                        denotation_errors_path,
                                        predictions_file_name, add_weights):
   with tf.io.gfile.GFile(tables_file, 'rb') as f:

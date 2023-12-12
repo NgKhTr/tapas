@@ -44,6 +44,9 @@ from tapas.utils import attention_utils
 
 tf.disable_v2_behavior()
 
+DENOTATION_ERRORS_PATH = 'log'
+PREDICTION_FILE_NAME = 'acc'
+
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string('input_dir', None,
@@ -808,8 +811,8 @@ def _eval_for_set(
   ]:
     denotation_accuracy = calc_metrics_utils.calc_denotation_accuracy(
         examples=test_examples,
-        denotation_errors_path=None,
-        predictions_file_name=None,
+        denotation_errors_path=DENOTATION_ERRORS_PATH,
+        predictions_file_name=PREDICTION_FILE_NAME,
     )
     if global_step is not None:
       _create_measurements_for_metrics(
